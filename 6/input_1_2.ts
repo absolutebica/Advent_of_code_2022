@@ -9,11 +9,11 @@ console.log("Day1", markerPositionDay1);
 console.log("Day2", markerPositionDay2);
 
 function findPacketMarker(input:string, size:number = 4) {
-    for (let i = size; i < input.length; i++) {
-        const segments = input.slice(i - size, i).split("");
+    for (let index = size; index < input.length; index++) {
+        const segments = input.slice(index - size, index).split("");
         const segmentSet = new Set(segments); // filter out duplicates
         if (size === segmentSet.size) { // if no duplicates, size should match size, unique marker
-            return i;
+            return index;
         }
     }
 }
